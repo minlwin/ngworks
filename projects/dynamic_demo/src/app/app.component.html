@@ -1,0 +1,28 @@
+<div class="container mt-4">
+
+  <h3>Dynamic Loading Component</h3>
+
+  <div class="mt-4">
+    <ng-template appImgHost></ng-template>
+  </div>
+
+  <h3 class="mt-4">Static Loading</h3>
+
+  <div [ngSwitch]="index" class="mt-4">
+    <app-one *ngSwitchCase="1"></app-one>
+    <app-two *ngSwitchCase="2"></app-two>
+    <app-three *ngSwitchDefault></app-three>
+  </div>
+
+  <div class="mt-4">
+    <button (click)="loadComponent(1)" class="btn btn-danger me-2">
+      Component One
+    </button>
+    <button (click)="loadComponent(2)" class="btn btn-primary me-2">
+      Component Two
+    </button>
+    <button (click)="loadComponent(3)" class="btn btn-success">
+      Component Three
+    </button>
+  </div>
+</div>
