@@ -1,5 +1,7 @@
 .product-image {
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   border: 0.5px solid gray;
   border-radius: 5px;
 }
