@@ -1,11 +1,38 @@
-<div class="card">
-  <div class="card-header">
-    Product Name
-  </div>
+<div class="card mb-3">
+
   <div class="card-body">
-    <ng-template></ng-template>
+    <div class="d-flex flex-column mb-2">
+
+      <h4>{{item.name}}</h4>
+
+      <div class="d-flex flex-row justify-content-between text-secondary">
+        <div>
+          <span class="me-2">
+            <i class="bi-tag"></i> {{item.category.name}}
+          </span>
+          <span>{{item.publishAt | dateToDuration}}</span>
+        </div>
+
+        <span>{{item.condition}}</span>
+      </div>
+    </div>
+
+    <ng-template appImageHost ></ng-template>
   </div>
-  <div class="card-footer">
-    Some Other Actions
+
+  <div class="card-footer d-flex justify-content-between">
+    <div>
+      <a href="#" class="btn-link text-decoration-none">
+        <i class="bi-person"></i> {{ item.seller?.name || 'Owner'}}
+      </a>
+    </div>
+    <div>
+      <span class="me-2">
+        <i class="bi-currency-dollar"></i>{{item.price}}
+      </span>
+      <a href="#" class="btn-link">
+        <i class="bi-cart"></i>
+      </a>
+    </div>
   </div>
 </div>

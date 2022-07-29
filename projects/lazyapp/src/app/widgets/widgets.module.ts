@@ -11,6 +11,10 @@ import { ImgOneComponent } from './components/product-item/img-one/img-one.compo
 import { ImgTwoComponent } from './components/product-item/img-two/img-two.component';
 import { ImgThreeComponent } from './components/product-item/img-three/img-three.component';
 import { ImgFourComponent } from './components/product-item/img-four/img-four.component';
+import { DateToDurationPipe } from './pipes/date-to-duration.pipe';
+import { ImageHostDirective } from './components/product-item/image-host.directive';
+import { BackgroundImagePipe } from './pipes/background-image.pipe';
+import { ProductImageComponent } from './components/product-image/product-image.component';
 
 
 
@@ -24,7 +28,11 @@ import { ImgFourComponent } from './components/product-item/img-four/img-four.co
     ImgOneComponent,
     ImgTwoComponent,
     ImgThreeComponent,
-    ImgFourComponent
+    ImgFourComponent,
+    DateToDurationPipe,
+    ImageHostDirective,
+    BackgroundImagePipe,
+    ProductImageComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +42,9 @@ import { ImgFourComponent } from './components/product-item/img-four/img-four.co
   exports: [
     CategoryListComponent,
     TopSellersComponent,
-    CompactNumberPipe
+    CompactNumberPipe,
+    DateToDurationPipe,
+    BackgroundImagePipe
   ]
 })
 export class WidgetsModule { }

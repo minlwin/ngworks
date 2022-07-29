@@ -1,3 +1,4 @@
+import { ProductSerivce } from './../../../services/api/product.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -13,12 +14,14 @@ export class ProductsComponent implements OnInit {
 
   form:FormGroup
   title = ''
+  list:any[] = []
 
   constructor(
     builder:FormBuilder,
     route:ActivatedRoute,
     categoryService:CategoryService,
-    sellerService:TopSellersService) {
+    sellerService:TopSellersService,
+    private productService:ProductSerivce) {
 
     this.form = builder.group({
       category: 0,
@@ -47,7 +50,8 @@ export class ProductsComponent implements OnInit {
   }
 
   search() {
-    console.log(this.form.value)
+    this.productService.search(this.form.value)
+      .subscribe(result => this.list = result)
   }
 
   clear() {

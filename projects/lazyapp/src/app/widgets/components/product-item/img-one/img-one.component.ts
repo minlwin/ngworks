@@ -4,8 +4,6 @@ import { ImgComponent } from '../img-component';
 @Component({
   selector: 'app-img-one',
   templateUrl: './img-one.component.html',
-  styles: [
-  ]
 })
 export class ImgOneComponent implements ImgComponent, OnInit {
 
@@ -15,6 +13,10 @@ export class ImgOneComponent implements ImgComponent, OnInit {
   images: string[] = []
 
   ngOnInit(): void {
+  }
+
+  get image() {
+    return this.images.length > 0 ? this.images[0] : 'default-image.png'
   }
 
 }
