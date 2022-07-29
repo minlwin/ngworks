@@ -1,5 +1,5 @@
 import { ProductSerivce } from './../../../services/api/product.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from '../../../services/api/category.service';
@@ -56,6 +56,13 @@ export class ProductsComponent implements OnInit {
 
   clear() {
 
+  }
+
+  @HostListener('window:scroll')
+  scroll() {
+    let pox = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight
+
+    console.log(`ST : ${document.documentElement.scrollTop}, OH : ${document.documentElement.offsetHeight}, SH : ${document.documentElement.scrollHeight}`)
   }
 
 }
