@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-primary">
+<nav class="navbar navbar-expand navbar-dark bg-primary fixed-top">
   <div class="container">
     <span class="navbar-brand">
       <i class="bi-briefcase"></i> Traders
@@ -19,7 +19,9 @@
   <div class="row">
 
     <nav class="col-3">
-      <app-category-list></app-category-list>
+      <div class="sticky-top">
+        <app-category-list></app-category-list>
+      </div>
     </nav>
 
     <section class="col">
@@ -27,8 +29,9 @@
     </section>
 
     <section class="col-3">
-      <!-- Top Sellers -->
-      <app-top-sellers></app-top-sellers>
+      <div class="sticky-top">
+        <app-top-sellers></app-top-sellers>
+      </div>
     </section>
   </div>
 
