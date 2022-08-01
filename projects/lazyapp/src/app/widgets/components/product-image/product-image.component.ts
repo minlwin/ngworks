@@ -14,6 +14,9 @@ export class ProductImageComponent implements OnInit {
   @Input()
   height?:number
 
+  @Input()
+  width?:number
+
   constructor() { }
 
   ngOnInit(): void {

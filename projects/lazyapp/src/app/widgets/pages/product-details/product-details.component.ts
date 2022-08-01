@@ -1,7 +1,8 @@
 import { ProductSerivce } from './../../../services/api/product.service';
 import { map, tap, mergeMap } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { SecurityContext } from '../../../services/security/sercurity-context';
 
 @Component({
   templateUrl: './product-details.component.html',
@@ -13,7 +14,11 @@ export class ProductDetailsComponent implements OnInit {
   data?:any
   coverImage:string = ""
 
-  constructor(route:ActivatedRoute, private service:ProductSerivce) {
+  constructor(
+    route:ActivatedRoute,
+    private service:ProductSerivce,
+    private securityContext:SecurityContext,
+    private router:Router) {
     route.params.pipe(
       map(param => param['id']),
       mergeMap(id => service.findById(id))
@@ -26,4 +31,23 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  purchase() {
+    if(this.securityContext.security) {
+
+    }
+
+    this.router.navigate(['/public', 'signin'])
+  }
+
+  askQuestion() {
+    if(this.securityContext.security) {
+
+    }
+
+    this.router.navigate(['/public', 'signin'])
+  }
+
+  get features() {
+    return Object.keys(this.data?.features || {})
+  }
 }
