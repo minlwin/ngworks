@@ -6,7 +6,7 @@
       <h5>{{item.name}}</h5>
 
       <div>
-        <a href="#" class="btn-link text-decoration-none">
+        <a [routerLink]="['/public/products/seller', item.seller.id]" class="btn-link text-decoration-none">
           <i class="bi-person"></i> {{ item.seller?.name || 'Owner'}}
         </a>
       </div>
@@ -32,7 +32,7 @@
         <span class="me-2">
           <i class="bi-currency-dollar"></i>{{item.price}}
         </span>
-        <a href="#" class="btn-link">
+        <a [routerLink]="['/public', 'products', 'details', item.id]" class="btn-link">
           <i class="bi-cart"></i>
         </a>
       </div>

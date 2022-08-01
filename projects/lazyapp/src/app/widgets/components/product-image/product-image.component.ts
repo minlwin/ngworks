@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductImageComponent implements OnInit {
 
   @Input()
-  image!:string
+  image?:string
 
   @Input()
   height?:number

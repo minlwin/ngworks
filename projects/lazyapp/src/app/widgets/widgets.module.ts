@@ -15,6 +15,7 @@ import { DateToDurationPipe } from './pipes/date-to-duration.pipe';
 import { ImageHostDirective } from './components/product-item/image-host.directive';
 import { BackgroundImagePipe } from './pipes/background-image.pipe';
 import { ProductImageComponent } from './components/product-image/product-image.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 
@@ -32,7 +33,8 @@ import { ProductImageComponent } from './components/product-image/product-image.
     DateToDurationPipe,
     ImageHostDirective,
     BackgroundImagePipe,
-    ProductImageComponent
+    ProductImageComponent,
+    ProductDetailsComponent
   ],
   imports: [
     CommonModule,
