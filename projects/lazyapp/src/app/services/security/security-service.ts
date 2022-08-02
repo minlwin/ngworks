@@ -14,8 +14,6 @@ export class SecurityService {
       email: form.email
     }
 
-    console.log(this.context.security)
-
     return this.context.security
   }
 }

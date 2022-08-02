@@ -18,4 +18,8 @@ export class MemberComponent implements OnInit {
     return this.context.security?.name
   }
 
+  signOut() {
+    this.context.signOut();
+  }
+
 }

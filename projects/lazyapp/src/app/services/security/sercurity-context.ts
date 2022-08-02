@@ -5,6 +5,10 @@ const SECURITY_INFO = "com.jdc.traders.security"
 @Injectable({providedIn: 'root'})
 export class SecurityContext {
 
+  signOut() {
+    this.security = undefined
+  }
+
   constructor() {
     let info = localStorage.getItem(SECURITY_INFO)
     if(info) {
