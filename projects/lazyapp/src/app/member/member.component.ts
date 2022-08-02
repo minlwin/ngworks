@@ -1,3 +1,4 @@
+import { SecurityContext } from './../services/security/sercurity-context';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemberComponent implements OnInit {
 
-  constructor() { }
+  constructor(private context:SecurityContext) { }
 
   ngOnInit(): void {
+  }
+
+  get userName() {
+    return this.context.security?.name
   }
 
 }

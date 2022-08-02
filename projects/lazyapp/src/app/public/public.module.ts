@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +18,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    WidgetsModule
+    WidgetsModule,
+    ReactiveFormsModule
   ]
 })
 export class PublicModule { }

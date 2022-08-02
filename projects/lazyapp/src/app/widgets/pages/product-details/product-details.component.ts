@@ -16,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     route:ActivatedRoute,
-    private service:ProductSerivce,
+    service:ProductSerivce,
     private securityContext:SecurityContext,
     private router:Router) {
     route.params.pipe(
@@ -31,12 +31,15 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  purchase() {
-    if(this.securityContext.security) {
+  purchase(id:number) {
 
+    let routeInfo = ['/member', 'purchase', id]
+
+    if(this.securityContext.security) {
+      this.router.navigate(routeInfo)
     }
 
-    this.router.navigate(['/public', 'signin'])
+    this.router.navigate(['/public', 'signin'], {queryParams: {target: routeInfo}})
   }
 
   askQuestion() {
