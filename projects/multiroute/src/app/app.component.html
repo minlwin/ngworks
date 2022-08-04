@@ -1,0 +1,28 @@
+<div class="container mt-4">
+
+  <h3>Multi Route Demo</h3>
+
+  <div class="nav nav-pills">
+    <div class="nav-item">
+      <a [routerLink]="[{outlets: {primary: ['one'], sideMenu: ['side']}}]" routerLinkActive="active" class="nav-link">One</a>
+    </div>
+    <div class="nav-item">
+      <a [routerLink]="[{outlets: {primary: ['two'], sideMenu: ['side']}}]" routerLinkActive="active" class="nav-link">Two</a>
+    </div>
+    <div class="nav-item">
+      <a [routerLink]="[{outlets: {primary: ['three'], sideMenu: []}}]" routerLinkActive="active" class="nav-link">Three</a>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+      <h4>Main Contents</h4>
+      <router-outlet></router-outlet>
+    </div>
+
+    <router-outlet name="sideMenu"></router-outlet>
+
+  </div>
+
+</div>

@@ -18,7 +18,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     MyPurchasesComponent,
     MySalesComponent,
     ChangePassComponent,
-    EditProfileComponent
+    EditProfileComponent,
   ],
   imports: [
     CommonModule,

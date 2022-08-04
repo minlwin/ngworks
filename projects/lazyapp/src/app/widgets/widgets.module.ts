@@ -16,6 +16,7 @@ import { ImageHostDirective } from './components/product-item/image-host.directi
 import { BackgroundImagePipe } from './pipes/background-image.pipe';
 import { ProductImageComponent } from './components/product-image/product-image.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { MemberSideMenuComponent } from './components/member-side-menu/member-side-menu.component';
 
 
 
@@ -34,7 +35,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     ImageHostDirective,
     BackgroundImagePipe,
     ProductImageComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    MemberSideMenuComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     TopSellersComponent,
     CompactNumberPipe,
     DateToDurationPipe,
-    BackgroundImagePipe
+    BackgroundImagePipe,
+    MemberSideMenuComponent
   ]
 })
 export class WidgetsModule { }
