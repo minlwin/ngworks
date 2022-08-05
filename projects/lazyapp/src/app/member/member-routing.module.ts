@@ -9,6 +9,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MemberComponent } from './member.component';
 import { ChangePassComponent } from './change-pass/change-pass.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { PersonalInfoComponent } from './edit-profile/personal-info/personal-info.component';
+import { BankInfoComponent } from './edit-profile/bank-info/bank-info.component';
+import { ShippingInfoComponent } from './edit-profile/shipping-info/shipping-info.component';
 
 const routes: Routes = [
   {
@@ -18,7 +21,12 @@ const routes: Routes = [
       {
         path: 'profile',
         children: [
-          {path: 'edit', component: EditProfileComponent},
+          {path: 'edit', component: EditProfileComponent, children: [
+            {path: 'personal', component: PersonalInfoComponent},
+            {path: 'bank', component: BankInfoComponent},
+            {path: 'shipping', component: ShippingInfoComponent},
+            {path: '', redirectTo: 'personal', pathMatch: 'full'}
+          ]},
           {path: 'products', component: MyProductsComponent},
           {path: 'sales', component: MySalesComponent},
           {path: 'purchases', component: MyPurchasesComponent},
@@ -26,13 +34,7 @@ const routes: Routes = [
         ]
       },
       {path: 'products/details/:id', component: ProductDetailsComponent},
-      {path: 'products/details/:id', component: MemberSideMenuComponent, outlet: 'sideMenu'},
-      {path: 'products/category/:category', component: ProductsComponent},
-      {path: 'products/category/:category', component: MemberSideMenuComponent, outlet: 'sideMenu'},
-      {path: 'products/seller/:seller', component: ProductsComponent},
-      {path: 'products/seller/:seller', component: MemberSideMenuComponent, outlet: 'sideMenu'},
       {path: 'products', component: ProductsComponent},
-      {path: 'products', outlet: 'sideMenu', component: MemberSideMenuComponent},
       {path: '', redirectTo: 'products', pathMatch: 'prefix'}
     ]
   }

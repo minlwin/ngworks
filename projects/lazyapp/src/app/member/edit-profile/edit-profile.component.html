@@ -1,1 +1,35 @@
-<p>edit-profile works!</p>
+<h3>{{readonly ? 'User' : 'Edit'}} Profile</h3>
+
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a [routerLink]="['personal']" routerLinkActive="active" class="nav-link">
+      <i class="bi-person"></i> Personal Information
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a [routerLink]="['bank']" routerLinkActive="active" class="nav-link">
+      <i class="bi-bank"></i> Banking Information
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <a [routerLink]="['shipping']" routerLinkActive="active" class="nav-link">
+      <i class="bi-train-front"></i> Shipping Information
+    </a>
+  </li>
+</ul>
+
+<div class="container pt-2">
+  <router-outlet></router-outlet>
+
+  <div>
+    <button (click)="edit()" class="btn btn-outline-secondary me-2">
+      <i [ngClass]="readonly ? 'bi-pencil' : 'bi-arrow-left'"></i> {{readonly ? 'Edit' : 'Cancel'}}
+    </button>
+
+    <button (click)="save()" *ngIf="!readonly" class="btn btn-outline-danger">
+      <i class="bi-save"></i> Save
+    </button>
+  </div>
+</div>

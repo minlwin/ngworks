@@ -10,7 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MemberComponent implements OnInit {
 
-  constructor(private context:SecurityContext) { }
+  constructor(private context:SecurityContext, route:ActivatedRoute) {
+    route.params.subscribe(params => this.hideSideBar = params['hideSideBar'])
+  }
+
+  hideSideBar = false
 
   ngOnInit(): void {
   }
