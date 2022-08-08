@@ -13,3 +13,7 @@ body {
 .sticky-top {
   top: 4rem;
 }
+
+.inline-btn-wrapper {
+  padding-top: 2rem;
+}

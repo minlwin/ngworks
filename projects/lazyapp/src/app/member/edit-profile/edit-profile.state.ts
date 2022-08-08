@@ -6,6 +6,8 @@ export class EditProfileState {
 
   userProfile:FormGroup
 
+  editable = false
+
   constructor(private builder:FormBuilder) {
     this.userProfile = builder.group({
       id:0,
@@ -20,14 +22,17 @@ export class EditProfileState {
       bankingInfo: builder.array([]),
       address: builder.array([])
     })
+
+    this.addBankingInfo()
+    this.addAddress()
   }
 
   get bankingInfo() {
-    return this.userProfile.get('baknkinInfo') as FormArray
+    return this.userProfile.get('bankingInfo') as FormArray<FormGroup>
   }
 
   get address() {
-    return this.userProfile.get('address') as FormArray
+    return this.userProfile.get('address') as FormArray<FormGroup>
   }
 
   deleteBankingInfo(index:number) {

@@ -12,9 +12,15 @@ import { EditProfileState } from './edit-profile.state';
 })
 export class EditProfileComponent implements OnInit {
 
-  readonly = true
+  get readonly() {
+    return !this.state.editable
+  }
 
   constructor(private state:EditProfileState) { }
+
+  get userProfile() {
+    return this.state.userProfile
+  }
 
   ngOnInit(): void {
   }
@@ -26,7 +32,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   edit() {
-    this.readonly = !this.readonly
+    this.state.editable = !this.state.editable
   }
 
 }
