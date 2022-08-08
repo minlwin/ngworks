@@ -4,17 +4,32 @@
   <form [formGroup]="form">
     <div class="mb-3">
       <label class="form-label">Name</label>
-      <input formControlName="name" type="text" class="form-control">
-    </div>
+      <div class="input-group with-status">
+        <input type="text" formControlName="name" class="form-control">
+        <span class="input-group-text">
+          <i [ngClass]="form.get('name')?.valid ? 'bi-check-lg' : 'bi-x-lg'"></i>
+        </span>
+      </div>
+  </div>
 
     <div class="row mb-3" *ngFor="let item of attributes.controls; index as i" [formGroup]="attributes.at(i)">
       <div class="col">
         <label *ngIf="i == 0" class="form-label">Attribute Name</label>
-        <input type="text" formControlName="name" class="form-control">
+        <div class="input-group with-status">
+          <input type="text" formControlName="name" class="form-control">
+          <span class="input-group-text">
+            <i [ngClass]="attributes.at(i).get('name')?.valid ? 'bi-check-lg' : 'bi-x-lg'"></i>
+          </span>
+        </div>
       </div>
       <div class="col">
         <label *ngIf="i == 0" class="form-label">Attribute Value</label>
-        <input type="text" formControlName="value" class="form-control">
+        <div class="input-group with-status">
+          <input type="text" formControlName="value" class="form-control">
+          <span class="input-group-text">
+            <i [ngClass]="attributes.at(i).get('value')?.valid ? 'bi-check-lg' : 'bi-x-lg'"></i>
+          </span>
+        </div>
       </div>
       <div class="col-auto" [class.form-control-btn]="i == 0">
         <button (click)="addAttribute()" [class.disabled]="!attributes.at(i).valid" class="btn btn-outline-danger me-1">

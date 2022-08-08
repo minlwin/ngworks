@@ -1,3 +1,12 @@
 .form-control-btn {
   padding-top: 2rem;
 }
+
+.with-status > input {
+  border-right: none !important;
+}
+
+.with-status > span {
+  border-left: none !important;
+  background-color: transparent !important;
+}
