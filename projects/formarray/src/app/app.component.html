@@ -9,27 +9,36 @@
 
     <div class="row mb-3" *ngFor="let item of attributes.controls; index as i" [formGroup]="attributes.at(i)">
       <div class="col">
-        <label class="form-label">Attribute Name</label>
+        <label *ngIf="i == 0" class="form-label">Attribute Name</label>
         <input type="text" formControlName="name" class="form-control">
       </div>
       <div class="col">
-        <label class="form-label">Attribute Value</label>
+        <label *ngIf="i == 0" class="form-label">Attribute Value</label>
         <input type="text" formControlName="value" class="form-control">
       </div>
-      <div class="col-auto">
-        <button (click)="addAttribute()" class="btn btn-outline-danger form-control-btn me-1">
+      <div class="col-auto" [class.form-control-btn]="i == 0">
+        <button (click)="addAttribute()" [class.disabled]="!attributes.at(i).valid" class="btn btn-outline-danger me-1">
           <i class="bi-plus-lg"></i>
         </button>
-        <button (click)="removeAttribute(i)" class="btn btn-outline-danger form-control-btn">
+        <button (click)="removeAttribute(i)" class="btn btn-outline-danger">
           <i class="bi-dash-lg"></i>
         </button>
         </div>
     </div>
 
     <div>
-      <button class="btn btn-outline-danger">
+      <button class="btn btn-outline-danger" [class.disabled]="!form.valid">
         <i class="bi-save"></i> Save
       </button>
     </div>
   </form>
+
+  <div class="card mt-4">
+    <h5 class="card-header">Form Value</h5>
+    <div class="card-body">
+      <pre>{{form.value | json}}</pre>
+    </div>
+  </div>
 </div>
+
+

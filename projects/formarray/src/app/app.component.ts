@@ -1,4 +1,4 @@
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private builder:FormBuilder) {
     this.form = builder.group({
-      name: '',
+      name: ['', Validators.required],
       attributes: builder.array([
       ])
     })
@@ -25,8 +25,8 @@ export class AppComponent {
 
   addAttribute() {
     this.attributes.push(this.builder.group({
-      name: '',
-      value: ''
+      name: ['', Validators.required],
+      value: ['', Validators.required]
     }))
   }
 
