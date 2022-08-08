@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <h3>Dynamic Form</h3>
+
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control">
+    </div>
+
+    <div class="row mb-3" *ngFor="let item of attributes.controls; index as i" [formGroup]="attributes.at(i)">
+      <div class="col">
+        <label class="form-label">Attribute Name</label>
+        <input type="text" formControlName="name" class="form-control">
+      </div>
+      <div class="col">
+        <label class="form-label">Attribute Value</label>
+        <input type="text" formControlName="value" class="form-control">
+      </div>
+      <div class="col-auto">
+        <button (click)="addAttribute()" class="btn btn-outline-danger form-control-btn me-1">
+          <i class="bi-plus-lg"></i>
+        </button>
+        <button (click)="removeAttribute(i)" class="btn btn-outline-danger form-control-btn">
+          <i class="bi-dash-lg"></i>
+        </button>
+        </div>
+    </div>
+
+    <div>
+      <button class="btn btn-outline-danger">
+        <i class="bi-save"></i> Save
+      </button>
+    </div>
+  </form>
+</div>
