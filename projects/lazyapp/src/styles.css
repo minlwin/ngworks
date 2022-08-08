@@ -17,3 +17,10 @@ body {
 .inline-btn-wrapper {
   padding-top: 2rem;
 }
+
+.img-profile {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 1rem;
+}

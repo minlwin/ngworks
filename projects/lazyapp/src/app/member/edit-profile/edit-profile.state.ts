@@ -8,6 +8,8 @@ export class EditProfileState {
 
   editable = false
 
+  view = 'profile'
+
   constructor(private builder:FormBuilder) {
     this.userProfile = builder.group({
       id:0,

@@ -20,15 +20,23 @@
   </li>
 </ul>
 
-<div class="container pt-2">
+<div class="container pt-4">
   <router-outlet></router-outlet>
 
-  <div>
+  <div class="mt-4">
     <button (click)="edit()" class="btn btn-outline-secondary me-2">
       <i [ngClass]="readonly ? 'bi-pencil' : 'bi-arrow-left'"></i> {{readonly ? 'Edit' : 'Cancel'}}
     </button>
 
-    <button (click)="save()" *ngIf="!readonly" class="btn btn-outline-danger">
+    <button class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'profile'">
+      <i class="bi-camera"></i> Profile Photo
+    </button>
+
+    <button class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'ship'">
+      <i class="bi-train-front"></i> Add Address
+    </button>
+
+    <button (click)="save()" *ngIf="!readonly" class="btn btn-outline-danger me-2">
       <i class="bi-save"></i> Save
     </button>
   </div>

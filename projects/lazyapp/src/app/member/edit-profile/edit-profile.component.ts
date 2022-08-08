@@ -22,8 +22,13 @@ export class EditProfileComponent implements OnInit {
     return this.state.userProfile
   }
 
+  get view() {
+    return this.state.view
+  }
+
   ngOnInit(): void {
   }
+
 
   save() {
     // save form data

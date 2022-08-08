@@ -1,3 +1,4 @@
+import { EditProfileState } from './../edit-profile.state';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private state:EditProfileState) {
+    state.view = 'profile'
+  }
 
   ngOnInit(): void {
   }

@@ -9,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BankInfoComponent implements OnInit {
 
-  constructor(private state:EditProfileState) { }
+  constructor(private state:EditProfileState) {
+    state.view = 'bank'
+  }
 
   ngOnInit(): void {
   }
