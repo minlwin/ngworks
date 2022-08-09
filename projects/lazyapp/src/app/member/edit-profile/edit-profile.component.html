@@ -28,12 +28,16 @@
       <i [ngClass]="readonly ? 'bi-pencil' : 'bi-arrow-left'"></i> {{readonly ? 'Edit' : 'Cancel'}}
     </button>
 
-    <button class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'profile'">
+    <button (click)="uploadProfileImage()" class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'profile'">
       <i class="bi-camera"></i> Profile Photo
     </button>
 
-    <button class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'ship'">
+    <button (click)="addAddress()" class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'ship'">
       <i class="bi-train-front"></i> Add Address
+    </button>
+
+    <button (click)="addBankingInfo()" [class.disabled]="disabledAddBankInfo" class="btn btn-outline-danger me-2" *ngIf="!readonly && view == 'bank'">
+      <i class="bi-bank"></i> Add Banking Info
     </button>
 
     <button (click)="save()" *ngIf="!readonly" class="btn btn-outline-danger me-2">

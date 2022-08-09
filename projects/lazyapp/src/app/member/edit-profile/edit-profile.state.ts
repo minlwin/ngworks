@@ -50,9 +50,9 @@ export class EditProfileState {
 
     this.bankingInfo.push(this.builder.group({
       id: 0,
-      type: '',
-      accountName: '',
-      accountNumber: '',
+      type: ['', Validators.required],
+      accountName: ['', Validators.required],
+      accountNumber: ['', Validators.required],
       deleted: false
     }))
   }

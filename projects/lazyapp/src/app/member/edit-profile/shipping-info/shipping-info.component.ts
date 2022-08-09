@@ -1,3 +1,4 @@
+import { FormArray, FormGroup } from '@angular/forms';
 import { EditProfileState } from './../edit-profile.state';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,6 +14,14 @@ export class ShippingInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  get addresses() {
+    return this.state.address
+  }
+
+  getFormStyleClass(i:number) {
+    return i < this.addresses.controls.length - 1 ? 'pb-2 border-bottom border-1' : '';
   }
 
 }

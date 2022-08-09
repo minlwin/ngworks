@@ -40,4 +40,20 @@ export class EditProfileComponent implements OnInit {
     this.state.editable = !this.state.editable
   }
 
+  addBankingInfo() {
+    this.state.addBankingInfo()
+  }
+
+  addAddress() {
+    this.state.addAddress()
+  }
+
+  uploadProfileImage() {
+
+  }
+
+  get disabledAddBankInfo() {
+    return !this.state.bankingInfo.valid
+  }
+
 }
